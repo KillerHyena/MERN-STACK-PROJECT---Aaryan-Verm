@@ -1,4 +1,4 @@
 [build]
-  base = "Client"
-  command = "npm install && npm run build"
-  publish = "Client/build"
+base = "Client"       # Case-sensitive! Must match directory name
+command = "npm install && npm run build"
+publish = "Client/build"  # React's default build folder
