@@ -30,7 +30,7 @@ The project is divided into two main directories:
 
 * **Frontend**: [Netlify Link](https://mern-stack-projectaaryan-verma.netlify.app/)
 * **Backend API**: [Render Link](https://todo-backend-upxe.onrender.com)
-* **Demo Video**: [Watch on YouTube / Drive](https://link-to-demo)
+* **Demo Video**: [Watch on Drive](https://link-to-demo)
 
 #### 📌 Key Features:
 
