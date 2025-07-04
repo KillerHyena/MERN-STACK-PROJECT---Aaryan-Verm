@@ -1,124 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#3498db" />
-  <meta name="description" content="A full-stack MERN Todo application with real-time task management" />
-  
-  <!-- SEO Meta Tags -->
-  <meta name="keywords" content="todo app, task manager, MERN stack, productivity, react app" />
-  <meta name="author" content="Aaryan Verma" />
-  <meta property="og:title" content="MERN Stack Todo App" />
-  <meta property="og:description" content="Manage your tasks efficiently with this full-stack MERN application" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mern-stack-projectaaryan-verma.netlify.app/" />
-  <meta property="og:image" content="https://mern-stack-projectaaryan-verma.netlify.app/og-image.jpg" />
-  
-  <!-- PWA Configuration -->
-  <link rel="manifest" href="manifest.json" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
-  
-  <!-- Preconnect for Performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  
-  <!-- Title -->
-  <title>TaskFlow | MERN Stack Todo App</title>
-  
-  <!-- Inline Critical CSS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Login Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
     body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      color: #2c3e50;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
       min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    
-    #root {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      padding: 1rem;
-    }
-    
-    .app-loading {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      font-size: 1.5rem;
-      color: #3498db;
+      padding: 20px;
     }
     
-    .app-loading::after {
+    .container {
+      display: flex;
+      width: 900px;
+      height: 550px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    }
+    
+    .left-panel {
+      flex: 1;
+      background: linear-gradient(rgba(110, 142, 251, 0.8), rgba(167, 119, 227, 0.8)), 
+                  url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') center/cover;
+      color: white;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .left-panel::before {
       content: "";
-      width: 40px;
-      height: 40px;
-      border: 4px solid rgba(52, 152, 219, 0.2);
-      border-top-color: #3498db;
-      border-radius: 50%;
-      margin-left: 12px;
-      animation: spin 1s linear infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
     }
     
-    @keyframes spin {
-      to { transform: rotate(360deg); }
+    .left-content {
+      position: relative;
+      z-index: 2;
     }
+    
+    .left-panel h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .left-panel p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 90%;
+    }
+    
+    .features {
+      list-style: none;
+    }
+    
+    .features li {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+    }
+    
+    .features i {
+      margin-right: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .right-panel {
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .logo {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .logo i {
+      font-size: 48px;
+      color: #6e8efb;
+      margin-bottom: 10px;
+    }
+    
+    .logo h1 {
+      color: #333;
+      font-size: 28px;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+      position: relative;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      font-weight: 500;
+    }
+    
+    .input-with-icon {
+      position: relative;
+    }
+    
+    .input-with-icon i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #777;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 15px 15px 15px 45px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+    
+    .form-control:focus {
+      border-color: #6e8efb;
+      box-shadow: 0 0 0 3px rgba(110, 142, 251, 0.2);
+      outline: none;
+    }
+    
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+      font-size: 14px;
+    }
+    
+    .remember-me {
+      display: flex;
+      align-items: center;
+    }
+    
+    .remember-me input {
+      margin-right: 8px;
+    }
+    
+    .forgot-password {
+      color: #6e8efb;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .forgot-password:hover {
+      color: #a777e3;
+      text-decoration: underline;
+    }
+    
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .btn-login {
+      background: linear-gradient(to right, #6e8efb, #a777e3);
+      color: white;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(110, 142, 251, 0.4);
+    }
+    
+    .btn-login:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(110, 142, 251, 0.6);
+    }
+    
+    .social-login {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .social-login p {
+      color: #777;
+      margin-bottom: 15px;
+      position: relative;
+    }
+    
+    .social-login p::before,
+    .social-login p::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 30%;
+      height: 1px;
+      background: #e0e0e0;
+    }
+    
+    .social-login p::before {
+      left: 0;
+    }
+    
+    .social-login p::after {
+      right: 0;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .social-icon {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      transition: all 0.3s;
+    }
+    
+    .facebook {
+      background: #3b5998;
+    }
+    
+    .google {
+      background: #dd4b39;
+    }
+    
+    .twitter {
+      background: #1da1f2;
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-3px);
+    }
+    
+    .signup-link {
+      text-align: center;
+      color: #777;
+    }
+    
+    .signup-link a {
+      color: #6e8efb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    
+    .signup-link a:hover {
+      color: #a777e3;
+      text-decoration: underline;
+    }
+    
+    /* Responsive design */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+        height: auto;
+        width: 90%;
+      }
+      
+      .left-panel {
+        display: none;
+      }
+      
+      .right-panel {
+        padding: 40px 30px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      
+      .forgot-password {
+        margin-top: 10px;
+      }
+    }
+    
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .right-panel > * {
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    .logo { animation-delay: 0.1s; }
+    .form-group:first-child { animation-delay: 0.2s; }
+    .form-group:nth-child(2) { animation-delay: 0.3s; }
+    .options { animation-delay: 0.4s; }
+    .btn-login { animation-delay: 0.5s; }
+    .social-login { animation-delay: 0.6s; }
+    .signup-link { animation-delay: 0.7s; }
   </style>
 </head>
 <body>
-  <noscript>
-    <div class="noscript-warning">
-      <h2>JavaScript Required</h2>
-      <p>This application requires JavaScript to function properly. Please enable JavaScript in your browser settings.</p>
-      <p>Learn how to enable JavaScript: 
-        <a href="https://www.enable-javascript.com/" target="_blank" rel="noopener">enable-javascript.com</a>
-      </p>
+  <div class="container">
+    <div class="left-panel">
+      <div class="left-content">
+        <h2>Welcome Back!</h2>
+        <p>Sign in to access your personalized dashboard and continue your journey with us.</p>
+        <ul class="features">
+          <li><i class="fas fa-check"></i> Access to premium features</li>
+          <li><i class="fas fa-check"></i> Personalized content recommendations</li>
+          <li><i class="fas fa-check"></i> Sync across all your devices</li>
+          <li><i class="fas fa-check"></i> Priority customer support</li>
+        </ul>
+      </div>
     </div>
-  </noscript>
-  
-  <div id="root">
-    <div class="app-loading">
-      Loading TaskFlow...
+    
+    <div class="right-panel">
+      <div class="logo">
+        <i class="fas fa-user-lock"></i>
+        <h1>Account Login</h1>
+      </div>
+      
+      <form>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="input-with-icon">
+            <i class="fas fa-user"></i>
+            <input type="text" id="username" class="form-control" placeholder="Enter your username">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-with-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+          </div>
+        </div>
+        
+        <div class="options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        
+        <button type="submit" class="btn btn-login">Login</button>
+        
+        <div class="social-login">
+          <p>Or sign in with</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+            <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="signup-link">
+          Don't have an account? <a href="#">Sign Up</a>
+        </div>
+      </form>
     </div>
   </div>
-  
-  <!-- Preload main app bundle -->
-  <link rel="preload" href="main.bundle.js" as="script" />
-  
-  <!-- Load main bundle -->
-  <script defer src="main.bundle.js"></script>
-  
-  <!-- Service Worker Registration -->
+
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(registration => {
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-          })
-          .catch(error => {
-            console.log('ServiceWorker registration failed: ', error);
-          });
-      });
-    }
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      if(username && password) {
+        // Simulate login processing
+        const loginBtn = document.querySelector('.btn-login');
+        loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        loginBtn.disabled = true;
+        
+        setTimeout(() => {
+          // Success animation
+          document.querySelector('.container').classList.add('success');
+          loginBtn.innerHTML = '<i class="fas fa-check"></i> Login Successful!';
+          loginBtn.style.background = '#2ecc71';
+          
+          // Redirect after success
+          setTimeout(() => {
+            alert(`Welcome back, ${username}! Redirecting to dashboard...`);
+            // In a real app: window.location.href = '/dashboard';
+          }, 1000);
+        }, 1500);
+      } else {
+        // Show error
+        alert('Please fill in both fields');
+      }
+    });
   </script>
 </body>
 </html>
