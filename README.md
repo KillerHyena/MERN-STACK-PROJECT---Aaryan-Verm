@@ -1,7 +1,3 @@
-Absolutely! Here’s a clean **single-flow version** of your **MERN Stack To-Do List App** project description, suitable for including in a PDF (e.g., resume project section, portfolio, or internship report):
-
----
-
 ### ✅ MERN Stack To-Do List Web App
 
 This project is a fully functional **To-Do List application** developed using the **MERN stack** – **MongoDB**, **Express.js**, **React.js**, and **Node.js**. It allows users to seamlessly create, read, update, and delete tasks with real-time UI updates and a mobile-responsive interface. The frontend and backend are deployed separately, ensuring production readiness and scalable architecture.
