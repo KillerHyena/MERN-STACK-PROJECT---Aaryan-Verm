@@ -1,4 +1,4 @@
 [build]
-base = "Client"       # Case-sensitive! Must match directory name
-command = "npm install && npm run build"
-publish = "Client/build"  # React's default build folder
+base = "Client"
+command = "npm install --legacy-peer-deps && npm run build"  # Add flag
+publish = "Client/build"
